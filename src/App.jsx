@@ -3,12 +3,11 @@ import './App.css'
 import { useState } from 'react'
 import {EditOutlined, DeleteOutlined} from '@ant-design/icons'
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 const CreateForm = ({ open, onCreate, onCancel, onChange}) => {
   const [form] = Form.useForm();
-  // const onChange = (date, dateString) => {
-  //   console.log('date=', date, 'dateString=', dateString);
-  // };
+  
   return (
     <Modal
       open={open}
@@ -80,22 +79,22 @@ function App() {
     {
       key:1,
       name: 'Semen',
-      date: '17.03.2023',
+      date: moment('20.08.2023', ["MM.DD.YYYY", "DD.MM.YYYY"], true).format('DD.MM.YYYY')
     },
     {
       key:2,
       name: 'Andrey',
-      date: '18.03.2023',
+      date: moment('18.03.2023', ["MM.DD.YYYY", "DD.MM.YYYY"], true).format('DD.MM.YYYY'),
     },
     {
       key:3,
       name: 'Petr',
-      date: '19.03.2023',
+      date: moment('01.03.2023', ["MM.DD.YYYY", "DD.MM.YYYY"], true).format('DD.MM.YYYY'),
     },
     {
       key:4,
       name: 'Ivan',
-      date: '20.03.2023',
+      date: moment('15.04.2023', ["MM.DD.YYYY", "DD.MM.YYYY"], true).format('DD.MM.YYYY'),
     }
   ])
 
@@ -126,12 +125,15 @@ function App() {
     {
       key: '2',
       title: 'Имя',
-      dataIndex: 'name'
+      dataIndex: 'name',
+      sorter: (a, b) => a.name.localeCompare(b.name),
+      sortDirections: ['descend'],
     },
     {
       key: '3',
       title: 'Дата',
-      dataIndex: 'date'
+      dataIndex: 'date',
+      sorter: (a, b) => moment(a).valueOf() - moment(b).valueOf()
     },
     {
       key: '4',
