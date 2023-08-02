@@ -1,8 +1,11 @@
-# React + Vite
+# Разработка веб-приложение на React с использованием библиотеки компонентов Ant Design. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Постановка задачи:
 
-Currently, two official plugins are available:
+- Реализовать компонент таблицы с несколькими столбцами, которые должны включать в себя имя, дату, числовое значение, а так же колонку с действиями. 
+- Над таблицей должна быть кнопка "Добавить", вызывающая модальное окно с набором полей соответствующих столбцам в таблице. После заполнения и валидации данных полей в таблицу должна добавляться строка с ними. 
+- В ячейке колонки "Действия" должны быть кнопки "удалить" и "редактировать". Нажатие на кнопку "редактировать" вызывает модальное окно, заполненное данными из строки и при изменении и подтверждении в модальном окне меняет данные в соответствующей строке. Нажатие на кнопку "удалить" - убирает данную строку из таблицы.
+- Реализовать сортировку по всем колонкам, которая будет правильно работать в зависимости от типа значения в колонке
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Рабочую версию приложения можно посмотреть на [GitHub Pages](https://andrey-a-a.github.io/kaspel-antd/).
+

@@ -219,11 +219,6 @@ function App() {
             resetEditing()
           }}
         >
-          <Input type='number' value={editingEntry?.key} onChange={(e) => {
-            setEditingEntry(pre => {
-              return {...pre, key: e.target.value}
-            })
-          }} />
           <Input value={editingEntry?.name} onChange={(e) => {
             setEditingEntry(pre => {
               return {...pre, name: e.target.value}
